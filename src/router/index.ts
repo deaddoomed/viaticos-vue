@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw, type RouteLocation
 import Main from '../views/Main.vue';
 import Access from '../views/Access.vue';
 
-async function auth() {
+async function auth(to: RouteLocationNormalized, from: RouteLocationNormalized) {
   if (!localStorage.getItem('access_token')) {
     return { path: '/access' };
   }  
