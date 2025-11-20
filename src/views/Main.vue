@@ -12,20 +12,22 @@
         <div v-if="viatico_dias.length > 0">
             <table>
                 <thead>
-                    <th>Dias</th>
+                    <tr>
+                        <th>Dias</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr v-for="dia in viatico_dias" :key="dia.dia" class="dia-item">
-                    <td>{{ dia.dia.split('-')[2] }}</td>
-                    <td>
-                        <input type="text" v-model="dia.persona" placeholder="Persona" @input="dia.persona = dia.persona.toUpperCase()"/></br>
-                        <input type="text" v-model="dia.provincia" placeholder="Provincia" @input="dia.provincia = dia.provincia.toUpperCase()"/>
-                    </td>
-                    <td style="text-align: center;">
-                        <label for="check_pernocta">Pernocta</label>
-                        <input type="checkbox" id="check_pernocta" v-model="dia.pernocta"  />
-                    </td>
-                </tr>
+                    <tr v-for="dia in viatico_dias" :key="dia.dia" class="dia-item">
+                        <td>{{ dia.dia.split('-')[2] }}</td>
+                        <td>
+                            <input type="text" v-model="dia.persona" placeholder="Persona" @input="dia.persona = dia.persona.toUpperCase()"/></br>
+                            <input type="text" v-model="dia.provincia" placeholder="Provincia" @input="dia.provincia = dia.provincia.toUpperCase()"/>
+                        </td>
+                        <td style="text-align: center;">
+                            <label for="check_pernocta">Pernocta</label>
+                            <input type="checkbox" id="check_pernocta" v-model="dia.pernocta"  />
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <button @click="enviarViaticoJSON()">Enviar</button>
